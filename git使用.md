@@ -23,3 +23,16 @@ git merge origin/master //把更新的内容合并到本地分支
 ```shell
 git branch --set-upstream-to=origin/master master
 ```
+
+## 2 git clone的文件夹与想要的文件夹不是同一级，而是一个父文件夹
+
+引起这个问题的的原因是git clone命令，git clone实际上是自动新建了一个git仓库。
+
+如果想获得子文件夹结构，应该按如下顺序：
+
+1. 在本地新建一个文件夹；
+2. git init 本地问价夹为一个git仓库；
+3. 设置本地文件夹的git远程仓库： ``` git remote add origin https://github.com/***/ ```
+4. 使用git pull指令拉取远程内容即可。
+
+或者在父目录中执行git clone命令（如果情况可以的话，当然多数情况下可能不行）
