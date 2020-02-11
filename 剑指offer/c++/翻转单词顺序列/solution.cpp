@@ -15,13 +15,13 @@ public:
         int p = len - 1, left = len - 1;
         while(p > 0){
         	if(str[p] == ' '){
-        		result += str.substr(p+1, left-p);
+        		result += str.substr(p+1, left-p);//字符串的子串
         		result +=" ";
         		left = p-1;
         	}
         	p--;
         }
-        result += str.substr(0,left+1);
+        result += str.substr(0,left+1);//字符串的子串
 
         return result;
     }
